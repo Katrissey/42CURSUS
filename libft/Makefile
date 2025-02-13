@@ -6,7 +6,7 @@
 #    By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/13 16:15:16 by rocgarci          #+#    #+#              #
-#    Updated: 2025/02/13 19:20:20 by rocgarci         ###   ########.fr        #
+#    Updated: 2025/02/13 19:50:07 by rocgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,9 +66,11 @@ all: $(NAME)
 
 # Regla para crear la biblioteca
 $(NAME): $(OBJ) $(INCLUDE)
-	$(AR) $(NAME) $(OBJ)
+	$(AR) $@ $^
 
 # Pasar archivos fuente a archivos objeto (.c -> .o)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Regla para eliminar todos los archivos objeto creados
 clean:
