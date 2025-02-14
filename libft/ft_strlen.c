@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/14 20:29:28 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/14 20:40:31 by rocgarci         ###   ########.fr       */
+/*   Created: 2025/02/14 20:34:52 by rocgarci          #+#    #+#             */
+/*   Updated: 2025/02/14 21:13:34 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_strlen(const char *s)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
+	char	*copia;
+
+	copia = (char *) s;
+	while (*copia != '\0')
+		copia++;
+	return (copia - s);
+	return (0);
 }
 
 /*int	main(void)
 {
-	unsigned char	c;
-	unsigned char	l;
-	unsigned char	s;
+	size_t	lenft;
+	size_t	lenori;
 
-	c = 'a';
-	l = 'F';
-	s = ']';
-	printf("The character %c in uppercase is %c.\n", c, ft_toupper(c));
-	printf("The character %c keeps as %c.\n", l, ft_toupper(l));
-	printf("The character %c keeps as %c.\n", s, ft_toupper(s));
-	printf("The character %c in uppercase is %c.\n", c, toupper(c));
+	lenft = ft_strlen("¡Adoro 42!");
+	lenori = strlen("¡Adoro 42!");
+	printf("The length of the string with ft is %zu.\n", lenft);
+	printf("The length of the string with strlen is %zu.\n", lenori);
 	return (0);
 }*/
