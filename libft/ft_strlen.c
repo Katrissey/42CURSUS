@@ -6,13 +6,13 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 20:34:52 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/14 21:13:34 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/14 23:16:42 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	char	*copia;
 
