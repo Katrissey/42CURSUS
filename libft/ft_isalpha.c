@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:13:30 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/13 19:03:38 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/14 14:07:57 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,5 @@ int	ft_isalpha(int c)
 		printf("The character %c is an alphabetic character.\n", l);
 	else
 		printf("The character %c is not an alphabetic character.\n", l);
-	if (isalpha(s))
-		printf("The character %c is an alphabetic character.\n", s);
+	return (0);
 }*/
