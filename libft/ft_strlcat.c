@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 00:28:36 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/15 00:35:30 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/15 00:39:42 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 /*int	main(void)
 {
-	char		dst[15];
-	const char	*src = "¡Adoro 42!";
+	char		dst[15] = "Adoro ";
+	const char	*src = "42!";
 	size_t		catft;
 	size_t		catori;
 
