@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 21:29:43 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/14 23:16:37 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/14 23:21:36 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	cpyori = 0;
 	cpyft = ft_strlcpy(dst, src, sizeof(dst));
 	cpyori = strlcpy(dst, src, sizeof(dst));
+	printf("The string copied with ft is %s.\n", dst);
 	printf("The length of the string with ft is %zu.\n", cpyft);
 	printf("The length of the string with strlcpy is %zu.\n", cpyori);
 	return (0);
