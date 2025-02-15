@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 01:35:19 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/15 01:45:18 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/15 02:12:26 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (NULL);
 }
 
-i/*nt	main(void)
+/*int	main(void)
 {
 	const char	*big = "¡Adoro 42!";
 	const char	*little = "42!";
