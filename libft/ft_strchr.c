@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 00:40:54 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/15 00:47:10 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:32:18 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ char	*ft_strchr(const char *s, int c)
 
 	ptrft = ft_strchr(str, c);
 	ptro = strchr(str, c);
-	printf("The string is %s.\n", str);
+	printf("The string in which to search is %s.\n", str);
 	printf("The character is %c.\n", c);
-	printf("The pointer with ft is %s.\n", ptrft);
-	printf("The pointer with strchr is %s.\n", ptro);
+	printf("The pointer with ft is %p.\n", ptrft);
+	printf("The pointer with strchr is %p.\n", ptro);
 	return (0);
 }*/
