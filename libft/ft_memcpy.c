@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 13:00:19 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/15 14:04:14 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/15 14:49:53 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	ptrdest = (unsigned char *)dest;
 	ptrsrc = (unsigned char *)src;
-	if (!dest && !src)
-		return (NULL);
+	if ((!dest && !src) || n == 0)
+		return (dest);
 	if (ptrdest == ptrsrc)
 		return (dest);
 	while (n--)
@@ -30,18 +30,16 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 /*int	main(void)
 {
-	char	*str;
-	char	*ptrft;
-	char	*ptro;
-	size_t	n;
+	char	src[] = "¡Adoro 42!";
+	char	dest[15];
+	char	*dest_ft;
+	char	*dest_ori;
 
-	str = "¡Adoro 42!";
-	n = 10;
-	ptrft = ft_memcpy(str, str + 7, n);
-	ptro = memcpy(str, str + 7, n);
-	printf("The string is %s.\n", str);
-	printf("The number of characters to copy is %zu.\n", n);
-	printf("The pointer with ft is %s.\n", ptrft);
-	printf("The pointer with memcpy is %s.\n", ptro);
+	dest_ft = ft_memcpy(dest, src, sizeof(src));
+	dest_ori = memcpy(dest, src, sizeof(src));
+	printf("The string to copy from the source is %s.\n", src);
+	printf("The number of characters to move is %zu.\n", sizeof(src));
+	printf("The string copied with ft is %s.\n", dest_ft);
+	printf("The string copied with memcpy is %s.\n", dest_ori);
 	return (0);
 }*/
