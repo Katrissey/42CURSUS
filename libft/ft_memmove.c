@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 13:00:19 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/15 14:04:14 by rocgarci         ###   ########.fr       */
+/*   Created: 2025/02/15 13:18:06 by rocgarci          #+#    #+#             */
+/*   Updated: 2025/02/15 14:21:24 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*ptrdest;
 	unsigned char	*ptrsrc;
@@ -23,25 +23,31 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		return (NULL);
 	if (ptrdest == ptrsrc)
 		return (dest);
-	while (n--)
-		*ptrdest++ = *ptrsrc++;
+	if (ptrdest < ptrsrc)
+		while (n--)
+			*ptrdest++ = *ptrsrc++;
+	else
+	{
+		ptrdest += n;
+		ptrsrc += n;
+		while (n--)
+			*--ptrdest = *--ptrsrc;
+	}
 	return (dest);
 }
 
 /*int	main(void)
 {
-	char	*str;
-	char	*ptrft;
-	char	*ptro;
-	size_t	n;
+	char	src[] = "¡Adoro 42!";
+	char	dest[15];
+	char	*dest_ft;
+	char	*dest_ori;
 
-	str = "¡Adoro 42!";
-	n = 10;
-	ptrft = ft_memcpy(str, str + 7, n);
-	ptro = memcpy(str, str + 7, n);
-	printf("The string is %s.\n", str);
-	printf("The number of characters to copy is %zu.\n", n);
-	printf("The pointer with ft is %s.\n", ptrft);
-	printf("The pointer with memcpy is %s.\n", ptro);
+	dest_ft = ft_memmove(dest, src, sizeof(src));
+	dest_ori = memmove(dest, src, sizeof(src));
+	printf("The string to copy from the source is %s.\n", src);
+	printf("The number of characters to move is %zu.\n", sizeof(src));
+	printf("The string copied with ft is %s.\n", dest_ft);
+	printf("The string copied with memmove is %s.\n", dest_ori);
 	return (0);
 }*/
