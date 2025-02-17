@@ -6,12 +6,17 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 03:12:39 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/17 03:34:36 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/17 03:39:52 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief to verify the data
+/// @param s is the string
+/// @param c is the character
+/// @param ptr is the pointer to the array of strings
+/// @return the pointer to the array of strings
 char	**ft_verify_data(char const *s, char c, char **ptr)
 {
 	char	**ptr;
@@ -24,6 +29,13 @@ char	**ft_verify_data(char const *s, char c, char **ptr)
 	return (ptr);
 }
 
+/// @brief to cut the string
+/// @param s is the string
+/// @param c is the character
+/// @param ptr is the pointer to the array of strings
+/// @param i is the index of the string
+/// @param j is the index of the array of strings
+/// @return 
 char	**ft_cut_string(char const *s, char c, char **ptr, size_t i, size_t j)
 {
 	size_t	i;
@@ -49,6 +61,10 @@ char	**ft_cut_string(char const *s, char c, char **ptr, size_t i, size_t j)
 	return (ptr);
 }
 
+/// @brief to split a string into an array of strings	
+/// @param s is the string
+/// @param c is the character
+/// @return the pointer to the array of strings
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
