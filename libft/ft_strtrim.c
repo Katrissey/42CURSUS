@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/17 02:52:50 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/17 03:08:32 by rocgarci         ###   ########.fr       */
+/*   Created: 2025/02/17 03:05:42 by rocgarci          #+#    #+#             */
+/*   Updated: 2025/02/17 03:10:06 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/// @brief to create a substring from a string
-/// @param s is the string
-/// @param start is the index to start the substring
-/// @param len is the length of the substring	
+/// @brief to remove the set from the start and end of the string
+/// @param s1 is the string
+/// @param set is the set of characters to remove
 /// @return the pointer to the new string
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*ptr;
-	size_t	s_len;
+	size_t	s1_len;
+	size_t	start;
+	size_t	end;
 
-	if (!s)
+	if (!s1 || !set)
 		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		return (ft_strdup(""));
-	if (s_len < len)
-		len = s_len;
-	ptr = malloc(len + 1);
-	if (!ptr)
-		return (NULL);
-	ft_memcpy(ptr, s + start, len);
-	ptr[len] = '\0';
+	s1_len = ft_strlen(s1);
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = s1_len;
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	ptr = ft_substr(s1, start, end - start);
 	return (ptr);
 }
 
@@ -41,7 +40,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ptr;
 
-	ptr = ft_substr("¡Adoro 42!", 6, 5);
+	ptr = ft_strtrim("   ¡Adoro 42!   ", " ");
 	printf("%s\n", ptr);
 	free(ptr);
 	return (0);

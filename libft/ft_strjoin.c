@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 02:56:58 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/17 03:04:08 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/17 03:08:42 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ptr;
 
-	ptr = ft_strjoin("Hello ", "World!");
+	ptr = ft_strjoin("¡Adoro ", "42!");
 	printf("%s\n", ptr);
 	free(ptr);
 	return (0);

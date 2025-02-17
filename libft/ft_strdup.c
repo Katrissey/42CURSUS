@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 02:48:51 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/17 02:50:35 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/17 03:09:07 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strdup(const char *s1)
 {
 	char	*ptr;
 
-	ptr = ft_strdup("Hello World!");
+	ptr = ft_strdup("¡Adoro 42!");
 	printf("%s\n", ptr);
 	free(ptr);
 	return (0);
