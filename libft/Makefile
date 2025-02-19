@@ -6,7 +6,7 @@
 #    By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/13 16:15:16 by rocgarci          #+#    #+#              #
-#    Updated: 2025/02/14 14:08:27 by rocgarci         ###   ########.fr        #
+#    Updated: 2025/02/19 17:20:37 by rocgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ SRC = ft_atoi.c \
 	ft_putnbr_fd.c \
 	ft_itoa.c \
 	ft_striteri.c \
-	ft_split.c 
+	ft_split.c
 OBJ = $(SRC:.c=.o)
 
 #Archivo de encabezado

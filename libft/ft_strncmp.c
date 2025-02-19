@@ -6,12 +6,19 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 01:01:29 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/15 15:57:44 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/19 17:17:16 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief the strncmp() function compares not more than n characters
+///of two strings and returns an integer representing the difference
+///between the first non-matching characters.
+/// @param s1 is the first string to compare
+/// @param s2 is the second string to compare
+/// @param n is the number of characters to compare
+/// @return the difference between the first non-matching characters
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while (n > 0)
@@ -27,18 +34,20 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
 
-/*int	main(void)
+/*int	main(int argc, char *argv[])
 {
-	const char	*s1 = "¡Adoro 42!";
-	const char	*s2 = "¡Adoro 42!";
-	size_t		n = 5;
-	int			cmpft;
-	int			cmpori;
+	if (argc != 4)
+	{
+		fprintf(stderr, "Usage: %s <string1> <string2> <number of characters to compare>\n", argv[0]);
+		return (1);
+	}
+	const char	*s1 = argv[1];
+	const char	*s2 = argv[2];
+	size_t		n = strtoul(argv[3], NULL, 10);
 
-	cmpft = 0;
-	cmpori = 0;
-	cmpft = ft_strncmp(s1, s2, n);
-	cmpori = strncmp(s1, s2, n);
+	int			cmpft = ft_strncmp(s1, s2, n);
+	int			cmpori =strncmp(s1, s2, n);
+
 	printf("The string 1 is %s.\n", s1);
 	printf("The string 2 is %s.\n", s2);
 	printf("The number of characters to compare is %zu.\n", n);
