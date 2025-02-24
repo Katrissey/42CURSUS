@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 01:01:29 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/19 17:17:16 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:40:39 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /// @param s1 is the first string to compare
 /// @param s2 is the second string to compare
 /// @param n is the number of characters to compare
-/// @return the difference between the first non-matching characters
+/// @return the difference between the first non-matching characters. Is an int.
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while (n > 0)
