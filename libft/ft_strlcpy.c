@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 21:29:43 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/26 17:23:35 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/26 17:34:44 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	size_t n = strtoul(argv[2], NULL, 10);
 
-	if (n == 0 && argv[3][0] != '0')
+	if (n == 0 && argv[2][0] != '0')
 	{
-		fprintf(stderr, "%s, is not a number or is an invalid number.\n", argv[3]);
+		fprintf(stderr, "%s, is not a number or is an invalid number.\n", argv[2]);
 		return (1);
 	}
 	
