@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:33:28 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/26 20:32:29 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/26 20:39:38 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	ft_isalnum(int c)
 	else
 		printf("The character %c with ft, is NOT alphanumeric.\n", c);
 	if (isalnum(c))
-		printf("The character %c, with isprint, is alphanumeric.\n", c);
+		printf("The character %c, with isalnum, is alphanumeric.\n", c);
 	else
-		printf("The character %c with isprint, is NOT alphanumeric.\n", c);
+		printf("The character %c with isalnum, is NOT alphanumeric.\n", c);
 	return (0);
 }*/
