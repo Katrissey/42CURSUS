@@ -6,20 +6,19 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:49:40 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/26 20:45:16 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/26 20:48:05 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/// @brief tests for any character if it is an alphanumeric one
-///equivalent to if it is an alphabetic character or a digit.
-/// @param c int value of the character to be tested
-/// @return nonzero values if the character is alphanumeric, 0 otherwise
-int	ft_isalnum(int c)
+/// @brief tests if a character is a digit
+/// @param c is the character to test
+/// @return nonzero values if the character is a digit,
+/// 0 otherwise.
+int	ft_isdigit(int c)
 {
-	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)
-		|| (c >= 48 && c <= 57));
+	return (c >= 48 && c <= 57);
 }
 
 /*int	main(int argc, char *argv[])
