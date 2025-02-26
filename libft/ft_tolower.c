@@ -6,12 +6,16 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:39:31 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/14 20:27:01 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/26 18:43:31 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief converts an upper-case letter to the corresponding lower-case letter.
+/// @param c is the character to be converted.
+/// @return the corresponding lower-case letter if c is an upper-case letter.
+///Otherwise, return the character c as it was sent
 int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
@@ -19,18 +23,20 @@ int	ft_tolower(int c)
 	return (c);
 }
 
-/*int	main(void)
+/*int	main(int argc, char *argv[])
 {
-	unsigned char	c;
-	unsigned char	l;
-	unsigned char	s;
-
-	c = 'a';
-	l = 'F';
-	s = ']';
-	printf("The character %c keeps as %c.\n", c, ft_tolower(c));
-	printf("The character %c in lowercase is %c.\n", l, ft_tolower(l));
-	printf("The character %c keeps as %c.\n", s, ft_tolower(s));
-	printf("The character %c in lowercase is %c.\n", l, tolower(l));
+	if (argc != 2)
+	{
+		fprintf(stderr, "Usage: %s <the character to lower>", argv[0]);
+		return (1);
+	}
+	unsigned char	c = argv[1][0];
+	if (c >= 65 && c <= 90)
+	{
+		printf("The character %c in lowercase with ft is: %c.\n", c, ft_tolower(c));
+		printf("The character %c in lowercase with tolower is: %c.\n", c, tolower(c));
+	}
+	else
+		printf("The character %c keeps as %c.\n", c, ft_tolower(c));
 	return (0);
 }*/
