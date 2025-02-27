@@ -6,14 +6,14 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 20:22:40 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/17 01:48:52 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/27 19:06:11 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /// @brief to write a number to a file descriptor
-/// @details Adding '0' to the number to be written becomes it to its ascii
+/// @details Adding '0' to the number to be written becomes it to its ascii.
 /// We use recursion to write the number digit by digit
 /// @param n is the number to be written
 /// @param fd is the file descriptor (1 = terminal))
@@ -36,10 +36,17 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(nb + '0', fd);
 }
 
-/*int	main(void)
+/*int	main(int argc, char *argv[])
 {
-	ft_putnbr_fd(42, 1);
-	printf("\n");
-	ft_putnbr_fd(-1234567, 1);
+	if (argc != 3)
+	{
+		fprintf(stderr, "Usage: %s <The number to write into a file descriptor> \
+		<The number that represents the fd you want to write in>", argv[0]);
+		return (1);
+	}
+	size_t n = strtoul(argv[1], NULL, 10);
+	size_t fd = strtoul(argv[2], NULL, 10);
+
+	ft_putnbr_fd(n, fd);
 	return (0);
 }*/
