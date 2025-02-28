@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 19:25:06 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/16 19:02:04 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/02/28 14:15:34 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	ft_maxmin(long nb, int sign, char next_digit)
 
 /// @brief to convert a string to an integer
 /// @param str is the string to be converted
-/// @return is the string converted to an integer?
+/// @return The converted value or 0 if there was an error
 int	ft_atoi(const char *str)
 {
 	int		i;
@@ -69,12 +69,23 @@ int	ft_atoi(const char *str)
 	return (sign * nb);
 }
 
-/*int	main(void)
+/*int	main(int argc, char *argv[])
 {
-	char	*str = "  -1234";
+	if (argc != 2)
+	{
+		fprintf(stderr, "Usage: %s <The string you want to convert to an integer>", argv[0]);
+		return (1);
+	}
+	char	*str = argv[1];
 	int		nb;
 
 	nb = ft_atoi(str);
-	printf("%d\n", nb);
+	if (nb == 0)
+		printf("The string %s is not a correct number, please, send a correct one\n", str);
+	else
+	{
+		printf("%s is the string to convert to an integer\n", str);
+		printf("%d is the resultant integer\n", nb);
+	}
 	return (0);
 }*/
