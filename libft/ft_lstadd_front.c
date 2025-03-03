@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/03 18:35:16 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/03/03 19:57:18 by rocgarci         ###   ########.fr       */
+/*   Created: 2025/03/03 19:28:20 by rocgarci          #+#    #+#             */
+/*   Updated: 2025/03/03 19:53:15 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/// @brief Creates a new nodo using malloc(3)--> normalli we use sizeof(t_list),
-/// in this case, y use 3 as the size of the "t_list" type of data.
-/// @param content the variable which content is nedded to create de new nodo
-/// @return The new created nodo
-t_list	*ft_lstnew(void *content)
+/// @brief Adds new node to the top of the list (you must assigne
+/// the memory direction of the header to the new node of the list)
+/// @param lst the memory direccion of the pointer which ponters to
+/// the first node of a list: the header os that list
+/// @param new a pointer to the new node to include into the list
+/// at the begining of that list
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	t_list	*new_node;
 
-	new_node = (t_list *)malloc(3);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	new_node = new;
+	*lst = new_node;
 }
