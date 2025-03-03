@@ -6,7 +6,7 @@
 #    By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/13 16:15:16 by rocgarci          #+#    #+#              #
-#    Updated: 2025/02/19 17:20:37 by rocgarci         ###   ########.fr        #
+#    Updated: 2025/03/03 18:21:02 by rocgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,11 @@ NAME = libft.a
 # Compilador y banderas de compilación (FLAGS)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+
+# Colores                                       
+GREEN = \e[0;32m
+RED = \e[0;91m	
+NC = \e[0m
 
 # Archivos fuente y archivos objeto
 SRC = ft_atoi.c \
@@ -51,8 +56,20 @@ SRC = ft_atoi.c \
 	ft_putnbr_fd.c \
 	ft_itoa.c \
 	ft_striteri.c \
-	ft_split.c
+	#ft_split.c \
+	ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c//
+SRC_BONUS =
+
 OBJ = $(SRC:.c=.o)
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 #Archivo de encabezado
 INCLUDE = libft.h
@@ -65,16 +82,25 @@ RM = rm -f
 all: $(NAME)
 
 # Regla para crear la biblioteca
-$(NAME): $(OBJ) $(INCLUDE)
+$(NAME): $(OBJ)
 	$(AR) $@ $^
 
+# Reglas para crear la biblioteca con el bonus y que no haga relink
+bonus: .bonus
+
+.bonus: $(OBJ) $(OBJ_BONUS)
+	$(AR) $(NAME) $(OBJ) $(OBJ-BONUS)
+	touch .bonus
+
 # Pasar archivos fuente a archivos objeto (.c -> .o)
-%.o: %.c
+%.o: %.c $(INCLUDE)
+	@echo "$(GREEN)Compilando objetos${NC}"
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Regla para eliminar todos los archivos objeto creados
 clean:
-	$(RM) $(OBJ)
+	@echo "$(RED)-------------Eliminando objetos y archivo ".bonus"-------------${NC}"
+	$(RM) $(OBJ) $(OBJ_BONUS) .bonus
 
 # Regla para eliminar la biblioteca y los archivos objeto
 fclean: clean
