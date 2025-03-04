@@ -6,15 +6,17 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 02:48:51 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/17 03:09:07 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/04 18:54:38 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /// @brief to duplicate a string
+/// @details Obtain the memory for the new string with malloc() and
+/// can be freed with free()
 /// @param s1 is the string to duplicate
-/// @return the pointer to the new string
+/// @return the pointer to the new string, which is a duplicate of the string "s".
 char	*ft_strdup(const char *s1)
 {
 	char	*ptr;
