@@ -6,12 +6,22 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:52:55 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/15 15:32:13 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/04 13:41:06 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief scans the initial "n" bytes of the memory area pointed to by "s",
+/// for the first instance of "c". Both, "c" and the bytes of the memory area
+/// pointed to by "s", are interpreted as unsigned char.
+/// @param s is the memory area in which you want to scan to find
+/// the first instance of "c"
+/// @param c is the unsigned char you want to find in "s"
+/// @param n is the number of bytes from the memory area of "s"
+/// in which you are going to find "c"
+/// @return a pointer to the matching byte or NULL if the character
+/// doesn`t occur in the given memory area.
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*ptrs;
