@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 00:28:36 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/26 14:28:46 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/05 19:27:48 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,23 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	if (argc !=4)
 	{
-		fprintf(stderr, "Usage: <destination string> <source string> <destination total buffer size (NUMBER)>");
+		fprintf(stderr, %s "Usage: <destination string> <source string> <destination total buffer size (NUMBER)>", argv[0]);
 		return (1);
 	}
-	size_t	n = strtoul(argv[3], NULL, 10);
-	int	len_n = ft_strlen(argv[3]);
-	while (len_n >=0)
+	if (argv[3][0] == '0' && argv[3][1] == '\0')
 	{
-		if ((!argv[3][len_n] >= '0') && (!argv[3][len_n] <= '9'))
-		{
-			fprintf(stderr, "%s, is not a number or is an invalid number.\n", argv[3]);
-			return (1);
-		}
-		len_n--;
+		fprintf(stderr, "Buffer size cannot be 0.\n");
+		return (1),
 	}
+
+	size_t	n = strtoul(argv[3], NULL, 10);
+	
 	if (n == 0 && argv[3][0] != '0')
 	{
 		fprintf(stderr, "%s, is not a number or is an invalid number.\n", argv[3]);
 		return (1);
 	}
+	
 	char		dst[n];
 	ft_strlcpy(dst, argv[1], sizeof(dst));
 	const char	*src = argv[2];
