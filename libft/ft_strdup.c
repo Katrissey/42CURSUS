@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 02:48:51 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/03/04 18:54:38 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/07 21:08:28 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,17 @@ char	*ft_strdup(const char *s1)
 	return (ptr);
 }
 
-/*int	main(void)
+/*int	main(int argc, char *argv[])
 {
-	char	*ptr;
-
-	ptr = ft_strdup("¡Adoro 42!");
-	printf("%s\n", ptr);
+	if (argc != 2)
+	{
+		fprintf(stderr, "Usage: %s <the string you want to duplicate>\n", argv[0]);
+		return (1);
+	}
+	const char	*s1 = argv[1];
+	char	*ptr = ft_strdup(s1);
+	printf("The string to copy is: %s.\n", s1);
+	printf("The string just copied is: %s.f \n", ptr);
 	free(ptr);
 	return (0);
 }*/
