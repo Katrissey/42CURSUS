@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:52:55 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/03/04 13:41:06 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:11:47 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,34 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-/*int	main(void)
+/*int	main(int argc, char *argv[])
 {
-	char	str[] = "¡Adoro 42!";
-	char	c = '4';
-	char	*ptr_ft;
-	char	*ptr_ori;
+	if (argc != 4)
+	{
+		fprintf(stderr, "Usage: %s <the sring in which you want to find the first instance of the character you send> \
+		<the character you want to findd into the string you send> <the number of bytes you want to scan from th string>", argv[0]);
+		return (1);
+	}
+	char	*str = argv[1];
+	char	c = argv[2][0];
+	size_t	n = strtoul(argv[3], NULL, 10);
+	size_t	dest_size = strtoul(argv[3], NULL, 10);
 
-	ptr_ft = ft_memchr(str, c, sizeof(str));
-	ptr_ori = memchr(str, c , sizeof(str));
-	printf("The source in which to search is %s.\n", str);
-	printf("The character to find is %c.\n", c);
-	printf("The pointer found with ft is %s.\n", ptr_ft);
-	printf("The pointer found with memchr is %s.\n", ptr_ori);
+	if (dest_size == 0 && argv[3][0] != '0')
+	{
+		fprintf(stderr, "%s is not a number or is an invalid one.\n", argv[3]);
+		return (1);
+	}
+	
+	char	*ptr_ft = ft_memchr(str, c, n);
+	char	*ptr_ori = memchr(str, c , n);
+
+	printf("The source in which to search is: %s.\n", str);
+	printf("The character to find is: %c.\n", c);
+	printf("The number of bytes to scan is: %zu.\n", n);
+	printf("The pointer found with ft is: %s.\n", ptr_ft);
+	printf("The pointer found with memchr is: %s.\n", ptr_ori);
+	printf("The pointer found with ft is: %p.\n", ptr_ft);
+	printf("The pointer found with memchr is: %p.\n", ptr_ori);
 	return (0);
 }*/
