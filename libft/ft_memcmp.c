@@ -6,9 +6,11 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:34:38 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/03/04 18:35:42 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:49:33 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /// @brief compares the first "n" bytes of the memory areas "s1" and "s2",
 /// each of them, interpreted as unsigned char
@@ -41,11 +43,22 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
-/*int	main(void)
+/*int	main(int argc, char *argv[])
 {
-	char	str1[] = "¡Adoro 42!";
-	char	str2[] = "¡Adoro por siempre 42!";
-	size_t	n = 10;
+	if (argc != 4)
+	{
+		fprintf(stderr, "Usage: %s <the first string to compare with the second> <the second string to compare with the first> \
+		<the number of bytes you want to compare between both strings>", argv[0]);
+		return (1);
+	}
+	char	*str1 = argv[1];
+	char	*str2 = argv[2];
+	size_t	n = strtoul(argv[3], NULL, 10);
+	if (n == 0 && argv[3][0] != 0)
+	{
+		fprintf(stderr, "%s is not a number or is an invalid number.\n", argv[3]);
+		return (1);
+	}
 	int		ret_ft = ft_memcmp(str1, str2, n);
 	int		ret_ori = memcmp(str1, str2, n);
 
