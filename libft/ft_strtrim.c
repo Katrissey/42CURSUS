@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 03:05:42 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/17 03:10:06 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/07 21:25:53 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ptr);
 }
 
-/*int	main(void)
+/*int	main(int argc, char *argv[])
 {
-	char	*ptr;
+	if(argc != 3)
+	{
+		fprintf(stderr, "Usage: %s <the string you want to remove the set from> <the set you want to remove>\n", argv[0]);
+		return (1);
+	}
+	char		*s1 = argv[1];
+	const char	*set = argv[2];
+	char		*ptr;
 
-	ptr = ft_strtrim("   ¡Adoro 42!   ", " ");
-	printf("%s\n", ptr);
+	ptr = ft_strtrim(s1, set);
+	printf("The string you want to remove the set from is: %s.\n", s1);
+	printf("The set you want to remove from the string is: %s.\n", set);
+	printf("The pointer to the new string is: %s\n", ptr);
 	free(ptr);
 	return (0);
 }*/
