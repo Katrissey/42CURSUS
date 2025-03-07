@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 13:00:19 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/03/07 17:55:37 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/07 19:20:34 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 
 	char	dest[dest_size];
+	ft_memset(dest, '\0', dest_size);
 
 	char	*dest_ft = ft_memcpy(dest, src, n);
 	char	*dest_ori = memcpy(dest, src, n);
