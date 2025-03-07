@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:52:55 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/03/07 20:11:47 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:37:19 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	char	*str = argv[1];
 	char	c = argv[2][0];
 	size_t	n = strtoul(argv[3], NULL, 10);
-	size_t	dest_size = strtoul(argv[3], NULL, 10);
 
-	if (dest_size == 0 && argv[3][0] != '0')
+	if (n == 0 && argv[3][0] != '0')
 	{
 		fprintf(stderr, "%s is not a number or is an invalid one.\n", argv[3]);
 		return (1);
