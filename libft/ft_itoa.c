@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 03:36:40 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/02/17 03:40:38 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/07 22:17:24 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,23 @@ char	*ft_itoa(int n)
 	return (ptr);
 }
 
-/*int	main(void)
+/*int	main(int argc, char *argv[])
 {
-	char	*ptr;
-
-	ptr = ft_itoa(42);
-	printf("%s\n", ptr);
-	free(ptr);
-	ptr = ft_itoa(-42);
-	printf("%s\n", ptr);
-	free(ptr);
-	ptr = ft_itoa(0);
-	printf("%s\n", ptr);
+	if (argc != 2)
+	{
+		fprintf(stderr, "Usage: %s <the int you want to become to a string>\n", argv[0]);
+		return (1);
+	}
+	char	*endptr;
+	long	n = strtol(argv[1], &endptr, 10);
+	if (*endptr != '\0')
+	{
+		fprintf(stderr, "%s is not a valid number.\n", argv[1]);
+		return (1);
+	}
+	char	*ptr = ft_itoa(n);
+	printf("The number you want to become to a string is: %ld.\n", n);
+	printf("The new string is: %s\n", ptr);
 	free(ptr);
 	return (0);
 }*/
