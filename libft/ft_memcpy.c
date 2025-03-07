@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 13:00:19 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/03/04 13:03:57 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/07 17:55:37 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,49 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-/*int	main(void)
+/*int	main(int argc, char *argv[])
 {
-	char	src[] = "¡Adoro 42!";
-	char	dest[15];
+	if(argc != 4)
+	{
+		fprintf(stderr, "Usage: %s <the string you want to copy into destination memory area> \
+		<the number of bytes you want to copy from the source to destination> \
+		<the size of the buffer of destination>", argv[0]);
+		return (1);
+	}
+	char	*src = argv[1];
 
-	char	*dest_ft = ft_memcpy(dest, src, sizeof(src));
-	char	*dest_ori = memcpy(dest, src, sizeof(src));
-	printf("The string to copy from the source is %s.\n", src);
-	printf("The number of characters to move is %zu.\n", sizeof(src));
-	printf("The string copied with ft is %s.\n", dest_ft);
-	printf("The string copied with memcpy is %s.\n", dest_ori);
+	size_t	n = strtoul(argv[2], NULL, 10);
+
+	if (n == 0 && argv[2][0] != '0')
+	{
+		fprintf(stderr, "%s is not a number or is an invalid one.\n", argv[2]);
+		return (1);
+	}
+
+	size_t	dest_size = strtoul(argv[3], NULL, 10);
+
+	if (dest_size == 0 && argv[3][0] != '0')
+	{
+		fprintf(stderr, "%s is not a number or is an invalid one.\n", argv[3]);
+		return (1);
+	}
+
+	if (argv[3][0] == '0' && argv[3][1] == '\0')
+	{
+		fprintf(stderr, "Buffer size cannot be 0.\n");
+		return (1);
+	}
+
+	char	dest[dest_size];
+
+	char	*dest_ft = ft_memcpy(dest, src, n);
+	char	*dest_ori = memcpy(dest, src, n);
+	printf("The string to copy from the source is: %s.\n", src);
+	printf("The number of characters to copy: is: %zu.\n", n);
+	printf("The length of the destination buffer is: %zu.\n", dest_size);
+	printf("The string copied with ft is: %s.\n", dest_ft);
+	printf("The string copied with memcpy is: %s.\n", dest_ori);
+	printf("The pointer to dest to the string copied with ft is: %p.\n", dest_ft);
+	printf("The pointer to dest to the string copied with memcpy is: %p.\n", dest_ori);
 	return (0);
 }*/
