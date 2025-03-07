@@ -6,7 +6,7 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:26:16 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/03/04 12:50:05 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/07 16:41:09 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,29 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-/*int	main(void)
+/*int	main(int argc, char *argv[])
 {
-	char	str [] = "¡Adoro 42!";
-	int		c = 42;
-	size_t	n = 10;
+	if (argc != 4)
+	{
+		fprintf(stderr, "Usage: %s <the string you want to overwrite> <the character to overwrite the string> \
+		<the number of bytes you want to overwrite from the string with the character you use>", argv[0]);
+		return (1);
+	}
+	char	*str = argv[1];
+	int		c = strtoul(argv[2], NULL, 10);
+	size_t	n = strtoul(argv[3], NULL, 10);
 
-	printf("The string is %s.\n", str);
+	printf("The string you want to overwrite is: %s.\n", str);
 
 	char	*ptrft = ft_memset(str, c, n);
 	char	*ptro = memset(str, c, n);
 	
-	printf("The character to set is %d.\n", c);
-	printf("The number of characters to set is %zu.\n", n);
-	printf("The pointer with ft is %s.\n", ptrft);
-	printf("The pointer with memset is %s.\n", ptro);
+	printf("The overwrite string is: %s.\n", str);
+	printf("The character to set is: %d.\n", c);
+	printf("The number of characters to set is: %zu.\n", n);
+	printf("The pointer with ft is: %s.\n", ptrft);
+	printf("The pointer with memset is: %s.\n", ptro);
+	printf("The pointer address with ft is: %p.\n", ptrft);
+	printf("The pointer address with memset is: %p.\n", ptro);
 	return (0);
 }*/
