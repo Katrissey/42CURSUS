@@ -6,11 +6,31 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 03:36:40 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/03/07 22:17:24 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:24:20 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/// @brief get the length of the string you need to represent
+/// the number sent to the function
+/// @param n the number sent to the function
+/// @return the length of the number to create the allocation memory
+/// needed to represent the number sent to the function
+static int	get_length(int n)
+{
+	int	len;
+
+	len = 1;
+	if (n < 0)
+		len++;
+	while (n / 10 != 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
 
 /// @brief to convert an integer to a string
 /// @param n is the integer
@@ -21,27 +41,23 @@ char	*ft_itoa(int n)
 	int		len;
 	int		nbr;
 
-	len = 1;
-	nbr = n;
-	while (nbr /= 10)
-		len++;
-	if (n < 0)
-		len++;
+	len = get_length(n);
 	ptr = malloc(len + 1);
 	if (!ptr)
 		return (NULL);
 	ptr[len] = '\0';
+	nbr = n;
 	if (n < 0)
+	{
 		ptr[0] = '-';
+		nbr = -nbr;
+	}
 	else if (n == 0)
 		ptr[0] = '0';
-	while (n)
+	while (nbr)
 	{
-		if (n < 0)
-			ptr[--len] = '0' - n % 10;
-		else
-			ptr[--len] = '0' + n % 10;
-		n /= 10;
+		ptr[--len] = '0' + nbr % 10;
+		nbr /= 10;
 	}
 	return (ptr);
 }
