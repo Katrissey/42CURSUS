@@ -6,12 +6,15 @@
 /*   By: rocgarci <rocgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 12:15:05 by rocgarci          #+#    #+#             */
-/*   Updated: 2025/03/19 12:33:58 by rocgarci         ###   ########.fr       */
+/*   Updated: 2025/03/19 15:45:48 by rocgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief returns the new node of the list
+/// @param lst the list you want to get the last node
+/// @return the last node from lst
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)
@@ -21,11 +24,23 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
-/*int	main(int argc, char **argv[])
+/*void	free_list(t_list *list)
+{
+	t_list	*temp;
+
+	while (list)
+	{
+		temp = list;
+		list = list->next;
+		free(temp);
+	}
+}
+
+int	main(int argc, char **argv)
 {
 	if (argc < 2)
 	{
-		fprintf(stderr, "Usage: %s <at least the content of 2 nodes>\n", argv[0]);
+		fprintf(stderr, "Usage: %s <at least the content of 1 node>\n", argv[0]);
 		return (1);
 	}
 	t_list	*list;
@@ -34,6 +49,11 @@ t_list	*ft_lstlast(t_list *lst)
 	int		i;
 
 	list = ft_lstnew(argv[1]);
+	if (list == NULL)
+	{
+		fprintf(stderr, "Failed to created new list element.\n");
+		return (1);
+	}
 	i = 2;
 	while (i < argc)
 	{
@@ -43,6 +63,10 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	last_node = ft_lstlast(list);
 	if (last_node)
+	{
+		printf("The memory address of the new list is: %p.\n", (void *)list);
 		printf("The last node content is: %s.\n", (char *)last_node->content);
+	}
+	free_list(list);
 	return (0);
 }*/
